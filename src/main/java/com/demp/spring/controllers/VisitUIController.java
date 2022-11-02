@@ -20,7 +20,7 @@ import com.demo.spring.dto.VisitDTO;
 
 @Controller
 public class VisitUIController {
-	public String domain2="visit-microservice";
+	public String domain2="52.91.185.39:9080";
 	@Autowired
 	RestTemplate restTemplate;
 	

@@ -23,7 +23,7 @@ import com.demo.spring.dto.VetDTO;
 
 @Controller
 public class VetUIController {
-	public String domain1="vet-microservice";
+	public String domain1="52.91.185.39:9080";
 	@Autowired
 	RestTemplate restTemplate;
 

@@ -22,7 +22,7 @@ import com.demo.spring.dto.VetDTO;
 
 @Controller
 public class OwnerUIController {
-   public String domain="owner-microservice";
+   public String domain="52.91.185.39:9080";
     @Autowired
     RestTemplate restTemplate;
     
