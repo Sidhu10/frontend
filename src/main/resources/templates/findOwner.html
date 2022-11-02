@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Finder Page</title>
+</head>
+<body>
+    <form action="findone" method="get">
+        <span>Enter Owner ID</span><input type="text" name="ownerId"> <input
+            type="submit" value="Find Owner">
+    </form>
+    
+    <div th:switch="${owner}">
+    <div th:case="null">
+    <h1></h1>
+    </div>
+    <div th:case="*" style="margin-top:30px">
+        <table>
+            <tr>
+                <td>Owner Id:</td>
+                <td><span th:text="${owner.ownerId}"></span></td>
+            </tr>
+            <tr>
+                <td>Owner Name:</td>
+                <td><span th:text="${owner.ownerName}"></span></td>
+            </tr>
+
+
+
+           <tr>
+                <td>Owner Contact:</td>
+                <td><span th:text="${owner.ownerContact}"></span></td>
+            </tr>
+
+
+
+           <tr>
+                <td>Owner City:</td>
+                <td><span th:text="${owner.ownerCity}"></span></td>
+            </tr>
+
+
+
+       </table>
+        </div>
+    </div>
+    <div>
+    <h1 th:text="${msg}"></h1>
+    </div>
+</body>
+</html>

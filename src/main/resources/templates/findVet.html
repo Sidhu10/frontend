@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Finder Page</title>
+</head>
+<body>
+    <form action="findV" method="get">
+        <span>Enter Vet ID</span><input type="text" name="vetId"> <input
+            type="submit" value="Find Vet">
+    </form>
+    
+    <div th:switch="${vet}">
+    <div th:case="null">
+    <h1></h1>
+    </div>
+    <div th:case="*" style="margin-top:30px">
+        <table>
+            <tr>
+                <td>Vet Id:</td>
+                <td><span th:text="${vet.vetId}"></span></td>
+            </tr>
+            <tr>
+                <td>Vet Name:</td>
+                <td><span th:text="${vet.vetName}"></span></td>
+            </tr>
+
+
+
+           <tr>
+                <td>Vet Contact:</td>
+                <td><span th:text="${vet.vetContact}"></span></td>
+            </tr>
+
+
+
+           <tr>
+                <td>Vet City:</td>
+                <td><span th:text="${vet.vetCity}"></span></td>
+            </tr>
+            
+              <tr>
+                <td>Speciality :</td>
+                <td><span th:text="${vet.speciality}"></span></td>
+            </tr>
+
+
+
+       </table>
+        </div>
+    </div>
+    <div>
+    <h1 th:text="${msg}"></h1>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Finder Page</title>
+</head>
+<body>
+    <form action="findP" method="post">
+        <span>Enter Pet ID</span><input type="text" name="petId"> <input
+            type="submit" value="Find Pet">
+    </form>
+    
+    <div th:switch="${pet}">
+    <div th:case="null">
+    <h1></h1>
+    </div>
+    <div th:case="*" style="margin-top:30px">
+        <table>
+            <tr>
+                <td>Pet Id:</td>
+                <td><span th:text="${pet.petId}"></span></td>
+            </tr>
+            <tr>
+                <td>Pet Name:</td>
+                <td><span th:text="${pet.petName}"></span></td>
+            </tr>
+
+
+
+           <tr>
+                <td>Pet Contact:</td>
+                <td><span th:text="${pet.petType}"></span></td>
+            </tr>
+
+
+
+           <tr>
+                <td>Owner Id:</td>
+                <td><span th:text="${pet.owner}"></span></td>
+            </tr>
+
+
+
+       </table>
+        </div>
+    </div>
+     </div>
+    <div>
+    <h1 th:text="${msg}"></h1>
+    </div>
+</body>
+</html>

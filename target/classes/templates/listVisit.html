@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<meta charset="ISO-8859-1">
+<title>List all Page</title>
+</head>
+<body>
+    <div>
+    <form action="listVis" method="Post">
+    <span>Pet ID</span><input type="text" name="petId"><br/>
+    <input type="submit" value="Register">
+</form>
+        <table  class="table table-success table-striped" style="max-width:70%;margin-left:20%">
+            <tr>
+                <th>Visit Id</th>
+                <th>Owner Id</th>
+                <th>Pet Id</th>
+                <th>Purpose</th>
+                 <th>Speciality </th>
+                 <th>Date Time </th>
+            </tr>
+            <tr th:each="visit:${visitList}">
+                <td><span th:text="${visit.visitId}"></span></a></td>
+                <td><span th:text="${visit.ownerId}"></span></td>
+                <td><span th:text="${visit.petId}"></span></td>
+                <td><span th:text="${visit.purpose}"></span></td>
+                 <td><span th:text="${visit.speciality}"></span></td>
+                  <td><span th:text="${visit.dateTime}"></span></td>
+                
+            </tr>
+        </table>
+    </div>
+
+
+</div>
+    <div>
+    <h1 th:text="${msg}"></h1>
+    </div>
+
+
+
+</body>
+</html>
+
+
+

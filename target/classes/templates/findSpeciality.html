@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Finder Page</title>
+</head>
+<body>
+    <form action="findS" method="get">
+        <span>Enter Speciality ID</span><input type="text" name="specialityId"> <input
+            type="submit" value="Find Speciality">
+    </form>
+    
+    <div th:switch="${speciality}">
+    <div th:case="null">
+    <h1></h1>
+    </div>
+    <div th:case="*" style="margin-top:30px">
+        <table>
+            <tr>
+                <td>Vet Id:</td>
+                <td><span th:text="${speciality.specialityId}"></span></td>
+            </tr>
+            <tr>
+                <td>Vet Name:</td>
+                <td><span th:text="${speciality.sName}"></span></td>
+            </tr>
+
+
+
+           
+
+
+
+       </table>
+        </div>
+    </div>
+    <div>
+    <h1 th:text="${msg}"></h1>
+    </div>
+</body>
+</html>
